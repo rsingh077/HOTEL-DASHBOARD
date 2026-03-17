@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotel Sahil — Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Lato', sans-serif;
+        background-color: #0a0a0a;
+        color: #e0e0e0;
+      }
+      h1, h2, h3, h4, h5, h6, .font-serif {
+        font-family: 'Cinzel', serif;
+      }
+      /* Custom scrollbar for webkit */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #1a1a1a; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #4a0404; 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #6b0606; 
+      }
+
+      /* ========= Global Animations ========= */
+
+      /* Slide down — toasts, dropdowns */
+      @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-14px) scale(0.97); }
+        to { opacity: 1; transform: translateY(0) scale(1); }
+      }
+      /* Fade up — cards, sections */
+      @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(18px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      /* Scale in — modals, dialogs */
+      @keyframes scaleIn {
+        from { opacity: 0; transform: scale(0.92); }
+        to { opacity: 1; transform: scale(1); }
+      }
+      /* Fade in only */
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      /* Subtle float for hero elements */
+      @keyframes subtleFloat {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-4px); }
+      }
+      /* Card shimmer — decorative highlight sweep */
+      @keyframes shimmer {
+        0% { background-position: -200% 0; }
+        100% { background-position: 200% 0; }
+      }
+      /* Shake for errors */
+      @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        20% { transform: translateX(-4px); }
+        40% { transform: translateX(4px); }
+        60% { transform: translateX(-3px); }
+        80% { transform: translateX(3px); }
+      }
+      /* Glow pulse for live indicators */
+      @keyframes glowPulse {
+        0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.35); }
+        50% { box-shadow: 0 0 12px 2px rgba(239, 68, 68, 0.15); }
+      }
+
+      /* --- Reusable utility classes --- */
+      .anim-slide-down { animation: slideDown 0.35s cubic-bezier(0.16, 1, 0.3, 1) both; }
+      .anim-fade-up { animation: fadeUp 0.45s ease-out both; }
+      .anim-scale-in { animation: scaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) both; }
+      .anim-fade-in { animation: fadeIn 0.35s ease-out both; }
+      .anim-shake { animation: shake 0.4s ease-out; }
+      .anim-float { animation: subtleFloat 3s ease-in-out infinite; }
+      .anim-glow { animation: glowPulse 2s ease-in-out infinite; }
+
+      /* Staggered entrance delays */
+      .anim-delay-1 { animation-delay: 0.06s; }
+      .anim-delay-2 { animation-delay: 0.12s; }
+      .anim-delay-3 { animation-delay: 0.18s; }
+      .anim-delay-4 { animation-delay: 0.24s; }
+      .anim-delay-5 { animation-delay: 0.30s; }
+      .anim-delay-6 { animation-delay: 0.36s; }
+
+      /* Glass card surface */
+      .glass-card {
+        background: rgba(28, 25, 23, 0.55);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      /* Hover lift effect */
+      .hover-lift {
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+      .hover-lift:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 30px -8px rgba(0, 0, 0, 0.4);
+      }
+
+      /* Focus ring — consistent brand styling */
+      input:focus-visible, textarea:focus-visible, select:focus-visible {
+        outline: none;
+        border-color: #dc2626 !important;
+        box-shadow: 0 0 0 1px #dc2626 !important;
+      }
+
+      /* Gradient border on hover */
+      .hover-glow {
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      }
+      .hover-glow:hover {
+        border-color: rgba(220, 38, 38, 0.35);
+        box-shadow: 0 0 20px -6px rgba(220, 38, 38, 0.15);
+      }
+
+      /* Page entrance for main content */
+      .page-enter {
+        animation: fadeUp 0.4s ease-out both;
+      }
+
+      /* Smooth page transitions */
+      main > div {
+        animation: fadeUp 0.35s ease-out both;
+      }
+
+      /* ========= Profile Animations ========= */
+      @keyframes profileSlideDown {
+        from { opacity: 0; transform: translateY(-16px) scale(0.96); }
+        to { opacity: 1; transform: translateY(0) scale(1); }
+      }
+      @keyframes profileFadeUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes profileScaleIn {
+        from { opacity: 0; transform: scale(0.92); }
+        to { opacity: 1; transform: scale(1); }
+      }
+      @keyframes profilePulseRing {
+        0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+        70% { box-shadow: 0 0 0 8px rgba(239, 68, 68, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+      }
+      @keyframes profileShake {
+        0%, 100% { transform: translateX(0); }
+        20% { transform: translateX(-4px); }
+        40% { transform: translateX(4px); }
+        60% { transform: translateX(-3px); }
+        80% { transform: translateX(3px); }
+      }
+      @keyframes profileSlideUp {
+        from { opacity: 0; transform: translateY(24px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .profile-card { animation: profileFadeUp 0.5s ease-out both; }
+      .profile-card:nth-child(1) { animation-delay: 0.05s; }
+      .profile-card:nth-child(2) { animation-delay: 0.12s; }
+      .profile-card:nth-child(3) { animation-delay: 0.18s; }
+      .profile-card:nth-child(4) { animation-delay: 0.24s; }
+      .profile-toast { animation: profileSlideDown 0.35s cubic-bezier(0.16, 1, 0.3, 1) both; }
+      .profile-hero { animation: profileScaleIn 0.5s ease-out both; }
+      .profile-save-bar { animation: profileSlideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) both; }
+      .profile-shake { animation: profileShake 0.4s ease-in-out; }
+      .profile-input-focus { transition: all 0.2s ease; }
+      .profile-input-focus:focus { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+      .profile-hover-lift { transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1); }
+      .profile-hover-lift:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+      .profile-hover-glow:hover { border-color: rgba(239, 68, 68, 0.3) !important; }
+
+      /* ========= Reviews Animations ========= */
+      @keyframes reviewsFadeUp {
+        from { opacity: 0; transform: translateY(16px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes reviewsSlideDown {
+        from { opacity: 0; transform: translateY(-12px) scale(0.96); }
+        to { opacity: 1; transform: translateY(0) scale(1); }
+      }
+      @keyframes reviewsScaleIn {
+        from { opacity: 0; transform: scale(0.92); }
+        to { opacity: 1; transform: scale(1); }
+      }
+      @keyframes reviewsPulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.6; }
+      }
+      .reviews-card { animation: reviewsFadeUp 0.4s ease-out both; }
+      .reviews-toast { animation: reviewsSlideDown 0.35s cubic-bezier(0.16, 1, 0.3, 1) both; }
+      .reviews-modal { animation: reviewsScaleIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) both; }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.38.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
