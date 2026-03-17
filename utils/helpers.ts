@@ -53,12 +53,12 @@ export const STATUS_LABELS: Record<BookingStatus, string> = {
 // --- Local Storage ---
 
 const STORAGE_KEYS = {
-  bookings: 'hotel_sahil_bookings',
-  reviews: 'hotel_sahil_reviews',
-  housekeeping: 'hotel_sahil_housekeeping',
-  user: 'hotel_sahil_user',
-  rooms: 'hotel_sahil_rooms',
-  profile: 'hotel_sahil_profile',
+  bookings: 'hotels_dashboard_bookings',
+  reviews: 'hotels_dashboard_reviews',
+  housekeeping: 'hotels_dashboard_housekeeping',
+  user: 'hotels_dashboard_user',
+  rooms: 'hotels_dashboard_rooms',
+  profile: 'hotels_dashboard_profile',
 };
 
 export function saveToStorage<T>(key: keyof typeof STORAGE_KEYS, data: T): void {
@@ -143,7 +143,7 @@ export function generateInvoiceHTML(booking: {
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Invoice ${invoiceNo} - Hotel Sahil</title>
+  <title>Invoice ${invoiceNo} - Hotels Dashboard</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Segoe UI', Arial, sans-serif; color: #1a1a1a; background: #fff; padding: 40px; }
@@ -175,7 +175,7 @@ export function generateInvoiceHTML(booking: {
   <div class="invoice">
     <div class="header">
       <div>
-        <div class="hotel-name">Hotel Sahil</div>
+        <div class="hotel-name">Hotels Dashboard</div>
         <div class="hotel-sub">Premium Hospitality</div>
         <p style="font-size: 12px; color: #666; margin-top: 8px;">
           Srinagar, Jammu & Kashmir<br>
@@ -256,7 +256,7 @@ export function generateInvoiceHTML(booking: {
     ` : ''}
 
     <div class="footer">
-      <p>Thank you for choosing Hotel Sahil!</p>
+      <p>Thank you for choosing Hotels Dashboard!</p>
       <p style="margin-top: 4px;">This is a computer-generated invoice.</p>
     </div>
   </div>

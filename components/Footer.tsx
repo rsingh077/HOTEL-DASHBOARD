@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
             <div className="flex items-center gap-2.5">
               <Hotel size={22} className="text-red-600" />
               <span className="font-serif text-xl text-white tracking-wider">
-                Hotel <span className="text-red-500">Sahil</span>
+                Hotels <span className="text-red-500">Dashboard</span>
               </span>
             </div>
             <p className="text-stone-500 text-sm leading-relaxed text-center md:text-left max-w-xs">
@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
             </div>
             <div className="flex items-center gap-2 text-stone-400 text-sm">
               <Mail size={13} className="text-red-700/70" />
-              <span>info@hotelsahil.com</span>
+              <span>info@hotelsdashboard.com</span>
             </div>
             <div className="flex items-center gap-2 text-stone-400 text-sm">
               <MapPin size={13} className="text-red-700/70" />

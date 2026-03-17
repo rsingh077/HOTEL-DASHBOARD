@@ -1,10 +1,10 @@
 <div align="center">
-   <img width="1200" height="475" alt="Hotel Sahil Banner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+   <img width="1200" height="475" alt="Hotels Dashboard Banner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
 </div>
 
-# Hotel Sahil Dashboard
+# Hotels Dashboard
 
-Hotel Sahil Dashboard is a desktop-first hotel front-desk management system built with React, Vite, and Electron.
+Hotels Dashboard is a desktop-first hotel front-desk management system built with React, Vite, and Electron.
 
 It helps staff manage:
 
@@ -27,16 +27,16 @@ It helps staff manage:
 ### Windows Installer
 
 1. Download the latest installer from the repository Releases section.
-2. Run the setup file (`Hotel Sahil Setup <version>.exe`).
-3. Complete installation and launch **Hotel Sahil** from Desktop or Start Menu.
+2. Run the setup file (`Hotels Dashboard Setup <version>.exe`).
+3. Complete installation and launch **Hotels Dashboard** from Desktop or Start Menu.
 
 ### Demo Login Accounts
 
 Use any of these demo accounts on the login screen:
 
-- Admin: `admin@hotelsahil.com` / `admin123`
-- Manager: `manager@hotelsahil.com` / `manager123`
-- Staff: `staff@hotelsahil.com` / `staff123`
+- Admin: `admin@hotelsdashboard.com` / `admin123`
+- Manager: `manager@hotelsdashboard.com` / `manager123`
+- Staff: `staff@hotelsdashboard.com` / `staff123`
 
 ## Run Locally (For Developers)
 

@@ -15,9 +15,9 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
 
   // Demo credentials
   const DEMO_ACCOUNTS = [
-    { email: 'admin@hotelsahil.com', password: 'admin123', name: 'Admin', role: 'Administrator' },
-    { email: 'manager@hotelsahil.com', password: 'manager123', name: 'Sahil', role: 'Manager' },
-    { email: 'staff@hotelsahil.com', password: 'staff123', name: 'Front Desk', role: 'Staff' },
+    { email: 'admin@hotelsdashboard.com', password: 'admin123', name: 'Admin', role: 'Administrator' },
+    { email: 'manager@hotelsdashboard.com', password: 'manager123', name: 'Manager', role: 'Manager' },
+    { email: 'staff@hotelsdashboard.com', password: 'staff123', name: 'Front Desk', role: 'Staff' },
   ];
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -70,7 +70,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
             <Hotel className="w-8 h-8 text-red-500" />
           </div>
           <h1 className="text-3xl font-serif text-white tracking-wider">
-            Hotel <span className="text-red-500">Sahil</span>
+            Hotels <span className="text-red-500">Dashboard</span>
           </h1>
           <p className="text-stone-500 text-sm mt-1 tracking-widest uppercase">Management System</p>
         </div>

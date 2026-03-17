@@ -127,7 +127,7 @@ function App() {
 
   const handleLogout = () => {
     setUser(null);
-    try { localStorage.removeItem('hotel_sahil_user'); } catch (e) {}
+    try { localStorage.removeItem('hotels_dashboard_user'); } catch (e) {}
   };
 
   const renderPage = () => {

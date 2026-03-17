@@ -1,11 +1,11 @@
 {
-  "name": "hotel-sahil",
+  "name": "hotels-dashboard",
   "private": true,
   "version": "1.0.0",
   "type": "module",
   "main": "electron/main.cjs",
   "author": "eXon Solution Pvt. Ltd",
-  "description": "Hotel Sahil — Front Desk Management System",
+  "description": "Hotels Dashboard — Front Desk Management System",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -31,8 +31,8 @@
     "wait-on": "^9.0.4"
   },
   "build": {
-    "appId": "com.exonsolution.hotelsahil",
-    "productName": "Hotel Sahil",
+    "appId": "com.exonsolution.hotelsdashboard",
+    "productName": "Hotels Dashboard",
     "copyright": "Copyright © 2026 eXon Solution Pvt. Ltd",
     "npmRebuild": false,
     "directories": {
@@ -59,7 +59,7 @@
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
-      "shortcutName": "Hotel Sahil",
+      "shortcutName": "Hotels Dashboard",
       "installerSidebar": null,
       "license": null,
       "perMachine": false,

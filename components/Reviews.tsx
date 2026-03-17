@@ -385,7 +385,7 @@ const Reviews: React.FC<ReviewsProps> = ({ reviews, onReplyReview, onNavigate, u
                             <div className="w-6 h-6 rounded-md bg-red-900/30 flex items-center justify-center border border-red-800/30">
                               <Reply size={12} className="text-red-400" />
                             </div>
-                            <span className="text-stone-300 text-xs font-medium">Hotel Sahil replied</span>
+                            <span className="text-stone-300 text-xs font-medium">Hotels Dashboard replied</span>
                             <span className="text-stone-600 text-[10px]">· {formatDate(review.reply.repliedAt)}</span>
                           </div>
                           <p className="text-stone-400 text-xs sm:text-sm leading-relaxed">{review.reply.text}</p>

@@ -133,7 +133,7 @@ const Invoices: React.FC<InvoicesProps> = ({ bookings, onUpdateBooking, onNaviga
       'Payment Method': b.paymentMethod || '-',
       'Paid Amount': b.paidAmount || 0,
     }));
-    exportToCSV(data, 'hotel_sahil_invoices');
+    exportToCSV(data, 'hotels_dashboard_invoices');
     setToast({ message: `Exported ${data.length} invoices to CSV`, type: 'success' });
   };
 

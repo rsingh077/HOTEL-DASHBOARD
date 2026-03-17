@@ -42,7 +42,7 @@ function createWindow() {
     y: state.y,
     minWidth: 1024,
     minHeight: 700,
-    title: 'Hotel Sahil — Management System',
+    title: 'Hotels Dashboard — Management System',
     webPreferences: {
       preload: path.join(__dirname, 'preload.cjs'),
       contextIsolation: true,
